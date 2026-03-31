@@ -1,0 +1,58 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": [
+    ".github",
+    ".husky",
+    ".vscode",
+    "dist",
+    "dist-ssr",
+    "node_modules",
+    "public",
+    "*.min.*",
+    "*.d.ts"
+  ],
+  "categories": {
+    "correctness": "warn",
+    "suspicious": "warn"
+  },
+  "rules": {
+    "eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "typescript/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "eslint/no-debugger": "error",
+    "eslint/no-console": [
+      "warn",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "eslint/no-constant-binary-expression": "error",
+    "eslint/no-constant-condition": "warn",
+    "eslint/no-fallthrough": "error",
+    "eslint/no-unreachable": "error",
+    "eslint/no-unsafe-finally": "error",
+    "eslint/eqeqeq": ["error", "always"],
+    "eslint/curly": ["error", "all"],
+    "eslint/no-var": "error",
+    "eslint/prefer-const": "warn",
+    "eslint/no-shadow": "warn",
+    "eslint/no-empty": ["warn", { "allowEmptyCatch": true }],
+    "oxc/no-async-await": "off",
+    "oxc/no-rest-spread-properties": "off",
+    "typescript-eslint/explicit-function-return-type": "off",
+    "typescript-eslint/explicit-module-boundary-types": "off"
+  }
+}

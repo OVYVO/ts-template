@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
-import BaseButton from '@/components/customComp/BaseButton.vue'
-import EmptyState from '@/components/businessCopm/EmptyState.vue'
-import { APP_DESCRIPTION, APP_TITLE } from '@/constants/app'
-import { useDocumentTitle } from '@/hooks/useDocumentTitle'
-import { getHomeSummary } from '@/modules/home/api/getHomeSummary'
-import HomeHero from '@/modules/home/components/HomeHero.vue'
-import ProjectStructureCard from '@/modules/home/components/ProjectStructureCard.vue'
-import { useHomePreferences } from '@/modules/home/hooks/useHomePreferences'
-import type { HomeSummary } from '@/modules/home/types/home'
+import { computed, onMounted, ref } from "vue"
+import BaseButton from "@/components/customComp/BaseButton.vue"
+import EmptyState from "@/components/businessCopm/EmptyState.vue"
+import { APP_DESCRIPTION, APP_TITLE } from "@/constants/app"
+import { useDocumentTitle } from "@/hooks/useDocumentTitle"
+import { getHomeSummary } from "@/modules/home/api/getHomeSummary"
+import HomeHero from "@/modules/home/components/HomeHero.vue"
+import ProjectStructureCard from "@/modules/home/components/ProjectStructureCard.vue"
+import { useHomePreferences } from "@/modules/home/hooks/useHomePreferences"
+import type { HomeSummary } from "@/modules/home/types/home"
 
 const summary = ref<HomeSummary | null>(null)
 const { showAdvancedStructure, toggleAdvancedStructure } = useHomePreferences()
@@ -18,9 +18,7 @@ const visibleGroups = computed(() => {
     return []
   }
 
-  return showAdvancedStructure.value
-    ? summary.value.groups
-    : summary.value.groups.slice(0, 2)
+  return showAdvancedStructure.value ? summary.value.groups : summary.value.groups.slice(0, 2)
 })
 
 useDocumentTitle(APP_TITLE)
@@ -32,11 +30,7 @@ onMounted(async () => {
 
 <template>
   <section class="page-section">
-    <HomeHero
-      :title="APP_TITLE"
-      :description="APP_DESCRIPTION"
-      :principles="summary?.principles ?? []"
-    />
+    <HomeHero :title="APP_TITLE" :description="APP_DESCRIPTION" :principles="summary?.principles ?? []" />
   </section>
 
   <section id="structure" class="page-section">
@@ -47,23 +41,15 @@ onMounted(async () => {
       </div>
 
       <BaseButton variant="secondary" @click="toggleAdvancedStructure">
-        {{ showAdvancedStructure ? '收起模块细节' : '展开模块细节' }}
+        {{ showAdvancedStructure ? "收起模块细节" : "展开模块细节" }}
       </BaseButton>
     </div>
 
     <div v-if="summary" class="structure-grid">
-      <ProjectStructureCard
-        v-for="group in visibleGroups"
-        :key="group.title"
-        :group="group"
-      />
+      <ProjectStructureCard v-for="group in visibleGroups" :key="group.title" :group="group" />
     </div>
 
-    <EmptyState
-      v-else
-      title="正在准备目录说明"
-      description="目录分组、职责边界和模块示例会在这里展示。"
-    />
+    <EmptyState v-else title="正在准备目录说明" description="目录分组、职责边界和模块示例会在这里展示。" />
   </section>
 
   <section class="page-section">

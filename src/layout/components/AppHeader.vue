@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { APP_NAVIGATION, APP_TITLE } from '@/constants/app'
+import { APP_NAVIGATION, APP_TITLE } from "@/constants/app"
 </script>
 
 <template>
@@ -13,12 +13,7 @@ import { APP_NAVIGATION, APP_TITLE } from '@/constants/app'
     </RouterLink>
 
     <nav class="nav">
-      <RouterLink
-        v-for="item in APP_NAVIGATION"
-        :key="item.to"
-        class="nav-link"
-        :to="item.to"
-      >
+      <RouterLink v-for="item in APP_NAVIGATION" :key="item.to" class="nav-link" :to="item.to">
         {{ item.label }}
       </RouterLink>
     </nav>

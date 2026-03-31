@@ -1,0 +1,10 @@
+:root {
+  --color-brand: #5b6cff;
+  --color-bg-canvas: #f4f7fb;
+  --color-bg-panel: #ffffff;
+  --color-bg-subtle: #f1f4fb;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #5b6477;
+  --color-border-soft: #dde5f0;
+  --shadow-panel: 0 16px 40px rgba(15, 23, 42, 0.06);
+}

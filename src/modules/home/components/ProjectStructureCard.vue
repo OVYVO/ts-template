@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { StructureGroup } from '@/modules/home/types/home'
-import { formatDirectoryCount } from '@/utils/formatters'
+import type { StructureGroup } from "@/modules/home/types/home"
+import { formatDirectoryCount } from "@/utils/formatters"
 
 defineProps<{
   group: StructureGroup

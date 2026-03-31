@@ -3,13 +3,13 @@ export interface RequestOptions extends RequestInit {
 }
 
 export async function http<T>(path: string, options: RequestOptions = {}) {
-  const { baseUrl = '', headers, ...rest } = options
+  const { baseUrl = "", headers, ...rest } = options
   const response = await fetch(`${baseUrl}${path}`, {
     headers: {
-      'Content-Type': 'application/json',
-      ...headers,
+      "Content-Type": "application/json",
+      ...headers
     },
-    ...rest,
+    ...rest
   })
 
   if (!response.ok) {

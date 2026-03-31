@@ -1,16 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "ignorePatterns": [
-    ".github",
-    ".husky",
-    ".vscode",
-    "dist",
-    "dist-ssr",
-    "node_modules",
-    "public",
-    "*.min.*",
-    "*.d.ts"
-  ],
+  "ignorePatterns": [".github", ".husky", ".vscode", "dist", "dist-ssr", "node_modules", "public", "*.min.*", "*.d.ts"],
   "categories": {
     "correctness": "warn",
     "suspicious": "warn"

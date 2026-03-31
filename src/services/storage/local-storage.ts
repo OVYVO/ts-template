@@ -5,7 +5,7 @@ export function getLocalStorageBoolean(key: string, fallback: boolean) {
     return fallback
   }
 
-  return value === 'true'
+  return value === "true"
 }
 
 export function setLocalStorageBoolean(key: string, value: boolean) {

@@ -15,6 +15,7 @@
     "correctness": "warn",
     "suspicious": "warn"
   },
+  "plugins": ["typescript", "vue"],
   "rules": {
     "eslint/no-unused-vars": [
       "error",

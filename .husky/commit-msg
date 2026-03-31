@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+commit_msg="$(cat "$1")"
+new_commit_msg="$(printf '%s' "$commit_msg" | sed 's/^:[^:]*: //')"
+printf '%s\n' "$new_commit_msg" > "$1"
+
+# 如果提交信息包含 init，则跳过 commitlint（JSON 配置无法表达 ignores 函数）
+case "$(printf '%s' "$new_commit_msg" | tr '[:upper:]' '[:lower:]')" in
+  *init*)
+    exit 0
+    ;;
+esac
+
+pnpm exec commitlint --edit "$1"

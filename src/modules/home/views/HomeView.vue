@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import BaseButton from '@/components/base/BaseButton.vue'
-import EmptyState from '@/components/common/EmptyState.vue'
+import BaseButton from '@/components/customComp/BaseButton.vue'
+import EmptyState from '@/components/businessCopm/EmptyState.vue'
 import { APP_DESCRIPTION, APP_TITLE } from '@/constants/app'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 import { getHomeSummary } from '@/modules/home/api/getHomeSummary'
